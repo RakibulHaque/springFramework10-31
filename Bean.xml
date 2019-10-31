@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="patient"
+		class="com.springProject.SpringPracticeFactory.Patient"
+		factory-method="getInstance">
+		<property name="nationalId" value="12243"></property>
+		<constructor-arg name="id" value="123"></constructor-arg>
+		<constructor-arg name="name" value="rakibul"></constructor-arg>
+		<property name="address" ref="address"></property>
+		<property name="emergencyContactNames">
+			<list>
+				<value>ashiq</value>
+				<value>gamir</value>
+				<value>tarif</value>
+				<value>sadik</value>
+				<value>showrab</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="patient2"
+		class="com.springProject.SpringPracticeFactory.Patient">
+		<property name="nationalId" value="12243"></property>
+		<constructor-arg name="id" value="100"></constructor-arg>
+		<constructor-arg name="name" value="rock"></constructor-arg>
+		<property name="address" ref="address"></property>
+	</bean>
+	<bean id="address"
+		class="com.springProject.SpringPracticeFactory.Address">
+		<constructor-arg index="0" value="kolabagan"></constructor-arg>
+		<constructor-arg index="1" value="1200"></constructor-arg>
+	</bean>
+
+	<bean id="FactoryClass"
+		class="com.springProject.SpringPracticeFactory.FactoryClass">
+	</bean>
+</beans>
